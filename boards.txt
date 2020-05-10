@@ -435,6 +435,20 @@ Nucleo_64.menu.pnum.NUCLEO_L476RG.build.product_line=STM32L476xx
 Nucleo_64.menu.pnum.NUCLEO_L476RG.build.variant=NUCLEO_L476RG
 Nucleo_64.menu.pnum.NUCLEO_L476RG.build.cmsis_lib_gcc=arm_cortexM4lf_math
 
+# NUCLEO_L476QE board
+# Support: Serial1 (USART1 on PA10, PA9)
+Nucleo_64.menu.pnum.NUCLEO_L476QE=Nucleo L476QE
+Nucleo_64.menu.pnum.NUCLEO_L476QE.node=NODE_L476QE
+Nucleo_64.menu.pnum.NUCLEO_L476QE.upload.maximum_size=1048576
+Nucleo_64.menu.pnum.NUCLEO_L476QE.upload.maximum_data_size=98304
+Nucleo_64.menu.pnum.NUCLEO_L476QE.build.mcu=cortex-m4
+Nucleo_64.menu.pnum.NUCLEO_L476QE.build.flags.fp=-mfpu=fpv4-sp-d16 -mfloat-abi=hard
+Nucleo_64.menu.pnum.NUCLEO_L476QE.build.board=NUCLEO_L476QE
+Nucleo_64.menu.pnum.NUCLEO_L476QE.build.series=STM32L4xx
+Nucleo_64.menu.pnum.NUCLEO_L476QE.build.product_line=STM32L476xx
+Nucleo_64.menu.pnum.NUCLEO_L476QE.build.variant=NUCLEO_L476QE
+Nucleo_64.menu.pnum.NUCLEO_L476QE.build.cmsis_lib_gcc=arm_cortexM4lf_math
+
 # PNUCLEO_WB55RG board
 Nucleo_64.menu.pnum.PNUCLEO_WB55RG=P-Nucleo WB55RG
 Nucleo_64.menu.pnum.PNUCLEO_WB55RG.node="NODE_WB55RG,NOD_WB55RG"
