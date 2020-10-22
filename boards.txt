@@ -514,19 +514,6 @@ Nucleo_32.menu.pnum.NUCLEO_L412KB.build.product_line=STM32L412xx
 Nucleo_32.menu.pnum.NUCLEO_L412KB.build.variant=NUCLEO_L412KB
 Nucleo_32.menu.pnum.NUCLEO_L412KB.build.cmsis_lib_gcc=arm_cortexM4lf_math
 
-# NUCLEO_L4P5CEU board
-Nucleo_32.menu.pnum.NUCLEO_L4P5CEU=Nucleo L4P5CEU
-Nucleo_32.menu.pnum.NUCLEO_L4P5CEU.node=NODE_L4P5CEU
-Nucleo_32.menu.pnum.NUCLEO_L4P5CEU.upload.maximum_size=512000
-Nucleo_32.menu.pnum.NUCLEO_L4P5CEU.upload.maximum_data_size=320000
-Nucleo_32.menu.pnum.NUCLEO_L4P5CEU.build.mcu=cortex-m4
-Nucleo_32.menu.pnum.NUCLEO_L4P5CEU.build.flags.fp=-mfpu=fpv4-sp-d16 -mfloat-abi=hard
-Nucleo_32.menu.pnum.NUCLEO_L4P5CEU.build.board=NUCLEO_L412KB
-Nucleo_32.menu.pnum.NUCLEO_L4P5CEU.build.series=STM32L4xx
-Nucleo_32.menu.pnum.NUCLEO_L4P5CEU.build.product_line=STM32L4P5xx
-Nucleo_32.menu.pnum.NUCLEO_L4P5CEU.build.variant=NUCLEO_L4P5CEU
-Nucleo_32.menu.pnum.NUCLEO_L4P5CEU.build.cmsis_lib_gcc=arm_cortexM4lf_math
-
 # NUCLEO_L432KC board
 Nucleo_32.menu.pnum.NUCLEO_L432KC=Nucleo L432KC
 Nucleo_32.menu.pnum.NUCLEO_L432KC.node=NODE_L432KC
@@ -2171,6 +2158,26 @@ Garatronic.menu.upload_method.dfuMethod=STM32CubeProgrammer (DFU)
 Garatronic.menu.upload_method.dfuMethod.upload.protocol=2
 Garatronic.menu.upload_method.dfuMethod.upload.options=-g
 Garatronic.menu.upload_method.dfuMethod.upload.tool=stm32CubeProg
+
+################################################################################
+# Electroniccats boards
+
+Electroniccats.name=Electroniccats STM32-boards
+Electroniccats.build.core=arduino
+Electroniccats.build.board=Electroniccats
+Electroniccats.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial}
+
+# BAST-M4 board
+Electroniccats.menu.pnum.BAST_M4=BAST-M4
+Electroniccats.menu.pnum.BAST_M4.upload.maximum_size=524288
+Electroniccats.menu.pnum.BAST_M4.upload.maximum_data_size=327680
+Electroniccats.menu.pnum.BAST_M4.build.mcu=cortex-m4
+Electroniccats.menu.pnum.BAST_M4.build.flags.fp=-mfpu=fpv4-sp-d16 -mfloat-abi=hard
+Electroniccats.menu.pnum.BAST_M4.build.board=BAST-M4
+Electroniccats.menu.pnum.BAST_M4.build.series=STM32L4xx
+Electroniccats.menu.pnum.BAST_M4.build.product_line=STM32L4P5xx
+Electroniccats.menu.pnum.BAST_M4.build.variant=BAST-M4
+Electroniccats.menu.pnum.BAST_M4.build.cmsis_lib_gcc=arm_cortexM4lf_math
 
 ################################################################################
 # Midatronics boards

@@ -1,6 +1,6 @@
 /*
  *******************************************************************************
- * Copyright (c) 2017, STMicroelectronics
+ * Copyright (c) 2018, STMicroelectronics
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -31,12 +31,6 @@
 #ifndef _VARIANT_ARDUINO_STM32_
 #define _VARIANT_ARDUINO_STM32_
 
-/*----------------------------------------------------------------------------
- *        Headers
- *----------------------------------------------------------------------------*/
-
-#include "Arduino.h"
-
 #ifdef __cplusplus
 extern "C"{
 #endif // __cplusplus
@@ -44,89 +38,70 @@ extern "C"{
 /*----------------------------------------------------------------------------
  *        Pins
  *----------------------------------------------------------------------------*/
-#include "PeripheralPins.h"
 
-extern const PinName digitalPin[];
+//
+#define PB0  0 //A0
+#define PB1  1 //A1
+#define PA2  2 //A2
+#define PA3  3 //A3
+#define PA4  4 //A4
+#define PA15 5
+#define PB3  6
+#define PA0  7  
+#define PA1  8  
+#define PB4  9
+#define PB6  10
+#define PB7  11
+#define PB8  12
+#define PB9  13 
+#define PC13 14 //LED
+#define PB2  15 
+#define PA5  16 
+#define PA6  17 
+#define PA7  18 
+#define PB10 19 
+#define PB11 20 
 
-// Enum defining Arduino style alias for digital pin number --> Dx
-// !!!
-// !!! It must be aligned with the number of PinName
-// !!! defined in digitalPin[] array in variant.cpp
-// !!!
-enum {
-  D0,  D1,  D2,  D3,  D4,  D5,  D6,  D7,  D8,  D9,
-  D10, D11, D12, D13, D14, D15, D16, D17, D18, D19,
-  D20, DEND
-};
-// Enum defining Arduino style alias for analog pin number --> Ax
-// !!!
-// !!! It must be aligned with the number of analog PinName
-// !!! defined in digitalPin[] array in variant.cpp
-// !!!
-enum {
-  A_START_AFTER = D0, // pin number preceding A0
-  A0,  A1,  A2,  A3,  A4,
-  AEND
-};
+#define NUM_DIGITAL_PINS        21
+#define NUM_ANALOG_INPUTS       5
+#define NUM_ANALOG_FIRST        0
+
+// On-board LED pin number
+#define LED_BUILTIN             14
+#define LED_GREEN               LED_BUILTIN
+
+// I2C Definitions
+#define PIN_WIRE_SDA            20
+#define PIN_WIRE_SCL            19
+
+// SPI definitions
+#define PIN_SPI_SS              5
+#define PIN_SPI_MOSI            18
+#define PIN_SPI_MISO            17
+#define PIN_SPI_SCK             16
 
 //ADC resolution is 12bits
-#define ADC_RESOLUTION          12
-#define DACC_RESOLUTION         12
+//#define ADC_RESOLUTION          12
 
 //PWR resolution
-#define PWM_RESOLUTION          8
-#define PWM_FREQUENCY           1000
-#define PWM_MAX_DUTY_CYCLE      255
+//#define PWM_RESOLUTION          8
+//#define PWM_FREQUENCY           1000
+//#define PWM_MAX_DUTY_CYCLE      255
 
 //On-board LED pin number
 #define LED_BUILTIN             14
 #define LED_GREEN               LED_BUILTIN
 
-//On-board user button
-//#define USER_BTN                Dx
-
-
-//SPI definitions
-//define 16 channels. As many channel as digital IOs
-#define SPI_CHANNELS_NUM        16
-
-//default chip salect pin
-#define BOARD_SPI_DEFAULT_SS    10 
-
-//In case SPI CS channel is not used we define a default one
-#define BOARD_SPI_OWN_SS        SPI_CHANNELS_NUM
-
-#define SS                      BOARD_SPI_DEFAULT_SS
-#define MOSI                    18
-#define MISO                    17 
-#define SCLK                    16 
-#define SCK                     SCLK
-
-//I2C Definitions
-#define SDA                     20 // Default for Arduino connector compatibility
-#define SCL                     19 // Default for Arduino connector compatibility
-
 //Timer Definitions
-//Do not use timer used by PWM pins when possible. See PinMap_PWM in PeripheralPins.c
-#define TIMER_TONE              TIM5
-//#define TIMER_UART_EMULATED     TIM3
+#define TIMER_TONE              TIM6
+#define TIMER_SERVO             TIM7
 
-//Do not use basic timer: OC is required
-//#define TIMER_SERVO             TIMx  //TODO: advanced-control timers don't work
-
-//#define DEBUG_UART              ((USART_TypeDef *) U(S)ARTX) // ex: USART3
-
-// UART Emulation (uncomment if needed, required TIM1)
-//#define UART_EMUL_RX            PYxx // PinName used for RX
-//#define UART_EMUL_TX            PYxx // PinName used for TX
-
-// Serial Pin Firmata
+// UART Definitions
+#define SERIAL_UART_INSTANCE     2 //Connected to ST-Link
+// Default pin used for 'Serial' instance (ex: ST-Link)
+// Mandatory for Firmata
 #define PIN_SERIAL1_RX           8
 #define PIN_SERIAL1_TX           7
-// Define as many PIN_SERIALX than desired
-//#define PIN_SERIAL1_RX          Dx
-//#define PIN_SERIAL1_TX          Dx
-//...
 
 #ifdef __cplusplus
 } // extern "C"
@@ -136,10 +111,6 @@ enum {
  *----------------------------------------------------------------------------*/
 
 #ifdef __cplusplus
-// declare here as many UART objects than defined in variant.cpp
-extern HardwareSerial Serial1;
-//extern HardwareSerial SerialX;
-//...
 
 // These serial port names are intended to allow libraries and architecture-neutral
 // sketches to automatically default to the correct port name for a particular type
@@ -157,6 +128,7 @@ extern HardwareSerial Serial1;
 // SERIAL_PORT_HARDWARE_OPEN  Hardware serial ports which are open for use.  Their RX & TX
 //                            pins are NOT connected to anything by default.
 #define SERIAL_PORT_MONITOR   Serial
+#define SERIAL_PORT_USBVIRTUAL Serial
 #define SERIAL_PORT_HARDWARE  Serial1
 #endif
 
