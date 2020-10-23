@@ -553,6 +553,19 @@ Nucleo_32.menu.pnum.NUCLEO_G431KB.build.product_line=STM32G431xx
 Nucleo_32.menu.pnum.NUCLEO_G431KB.build.variant=NUCLEO_G431KB
 Nucleo_32.menu.pnum.NUCLEO_G431KB.build.cmsis_lib_gcc=arm_cortexM4lf_math
 
+# BAST-M4 board
+Nucleo_32.menu.pnum.BASTM4=BASTM4
+Nucleo_32.menu.pnum.BASTM4.node=BASTM4
+Nucleo_32.menu.pnum.BASTM4.upload.maximum_size=524288
+Nucleo_32.menu.pnum.BASTM4.upload.maximum_data_size=327680
+Nucleo_32.menu.pnum.BASTM4.build.mcu=cortex-m4
+Nucleo_32.menu.pnum.BASTM4.build.flags.fp=-mfpu=fpv4-sp-d16 -mfloat-abi=hard
+Nucleo_32.menu.pnum.BASTM4.build.board=BASTM4
+Nucleo_32.menu.pnum.BASTM4.build.series=STM32L4xx
+Nucleo_32.menu.pnum.BASTM4.build.product_line=STM32L4P5xx
+Nucleo_32.menu.pnum.BASTM4.build.variant=BASTM4
+Nucleo_32.menu.pnum.BASTM4.build.cmsis_lib_gcc=arm_cortexM4lf_math
+
 # Upload menu
 Nucleo_32.menu.upload_method.MassStorage=Mass Storage
 Nucleo_32.menu.upload_method.MassStorage.upload.protocol=
@@ -2158,26 +2171,6 @@ Garatronic.menu.upload_method.dfuMethod=STM32CubeProgrammer (DFU)
 Garatronic.menu.upload_method.dfuMethod.upload.protocol=2
 Garatronic.menu.upload_method.dfuMethod.upload.options=-g
 Garatronic.menu.upload_method.dfuMethod.upload.tool=stm32CubeProg
-
-################################################################################
-# Electroniccats boards
-
-Electroniccats.name=Electroniccats STM32-boards
-Electroniccats.build.core=arduino
-Electroniccats.build.board=Electroniccats
-Electroniccats.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial}
-
-# BAST-M4 board
-Electroniccats.menu.pnum.BAST_M4=BAST-M4
-Electroniccats.menu.pnum.BAST_M4.upload.maximum_size=524288
-Electroniccats.menu.pnum.BAST_M4.upload.maximum_data_size=327680
-Electroniccats.menu.pnum.BAST_M4.build.mcu=cortex-m4
-Electroniccats.menu.pnum.BAST_M4.build.flags.fp=-mfpu=fpv4-sp-d16 -mfloat-abi=hard
-Electroniccats.menu.pnum.BAST_M4.build.board=BAST-M4
-Electroniccats.menu.pnum.BAST_M4.build.series=STM32L4xx
-Electroniccats.menu.pnum.BAST_M4.build.product_line=STM32L4P5xx
-Electroniccats.menu.pnum.BAST_M4.build.variant=BAST-M4
-Electroniccats.menu.pnum.BAST_M4.build.cmsis_lib_gcc=arm_cortexM4lf_math
 
 ################################################################################
 # Midatronics boards

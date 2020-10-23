@@ -34,7 +34,6 @@
 //#include variant.h
 #include "pins_arduino.h"
 
-
 #ifdef __cplusplus
  extern "C" {
 #endif
@@ -44,63 +43,45 @@
   to STM32 PinName (PYx)*/
   const PinName digitalPin[] = {
     //PYx, Dx
-    PB_0, //D0- A0
-    PB_1, //D1- A1
-    PA_2, //D2- A2
-    PA_3, //D3- A3
-    PA_4, //D4- A4
-    PA_15, //D5
-    PB_3, //D6
-    PA_0, //D7 -TX
-    PA_1, //D8 -RX
-    PB_4, //D9
-    PB_6, //D10
-    PB_7, //D11
-    PB_8, //D12
-    PB_9, //D13
-    PC_13, //D14 -LED
-    PB_2, //D15 -D2
-    PA_5, //D16 -SCK
-    PA_6, //D17 -CIPO
-    PA_7, //D18 -COPI
-    PB_10, //D19 -SCL
-    PB_11, //D20 -SDA
+    PA_15, //D0
+    PB_3, //D1
+    PA_0, //D2 -TX
+    PA_1, //D3 -RX
+    PB_4, //D4
+    PB_6, //D5
+    PB_7, //D6
+    PB_8, //D7
+    PB_9, //D8
+    PC_13, //D9 -LED
+    PB_2, //D10 -D2
+    PA_5, //D11 -SCK
+    PA_6, //D12 -CIPO
+    PA_7, //D13 -COPI
+    PB_10, //D14 -SCL
+    PB_11, //D15 -SDA
+    //ANALOG PINS
+    PB_0, //D16- A0
+    PB_1, //D17- A1
+    PA_2, //D18- A2
+    PA_3, //D19- A3
+    PA_4  //D20- A4
   };
 
-  const uint32_t analogInputPin[] = {
+   const uint32_t analogInputPin[] = {
     0, //A0
     1, //A1
     2, //A2
     3, //A3
-    4, //A4
+    4  //A4
   };
 
 #ifdef __cplusplus
 }
 #endif
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-/*//  UART objects
-#ifdef ENABLE_SERIAL1
-HardwareSerial  Serial1(PA1, PA0);
-
-void serialEvent1() __attribute__((weak));
-void serialEvent1() { }
-#endif
-
-void serialEventRun(void)
-{
-  #ifdef ENABLE_SERIAL1
-  if (Serial1.available()) serialEvent1();
-  #endif
-}*/
-
 // ----------------------------------------------------------------------------
 #ifdef __cplusplus
-extern C {
+extern "C" {
 #endif
 
 /**
@@ -125,9 +106,8 @@ extern C {
   */
 WEAK void SystemClock_Config(void)
 {
-  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
-  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
-
+  RCC_OscInitTypeDef RCC_OscInitStruct = {};
+  RCC_ClkInitTypeDef RCC_ClkInitStruct = {};
   /** Configure the main internal regulator output voltage
   */
   if (HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE1_BOOST) != HAL_OK)
@@ -161,8 +141,7 @@ WEAK void SystemClock_Config(void)
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_5) != HAL_OK)
-  {
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_5) != HAL_OK){
     Error_Handler();
   }
 }

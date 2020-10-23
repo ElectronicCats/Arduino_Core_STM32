@@ -40,11 +40,6 @@ extern "C"{
  *----------------------------------------------------------------------------*/
 
 //
-#define PB0  0 //A0
-#define PB1  1 //A1
-#define PA2  2 //A2
-#define PA3  3 //A3
-#define PA4  4 //A4
 #define PA15 5
 #define PB3  6
 #define PA0  7  
@@ -62,9 +57,16 @@ extern "C"{
 #define PB10 19 
 #define PB11 20 
 
+// Analog pins
+#define PB0  A0
+#define PB1  A1
+#define PA2  A2
+#define PA3  A3
+#define PA4  A4
+
 #define NUM_DIGITAL_PINS        21
 #define NUM_ANALOG_INPUTS       5
-#define NUM_ANALOG_FIRST        0
+//#define NUM_ANALOG_FIRST        0
 
 // On-board LED pin number
 #define LED_BUILTIN             14
