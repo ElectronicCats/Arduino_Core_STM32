@@ -33,7 +33,7 @@ extern "C" {
 #if (!defined(STM32F0xx) && !defined(STM32F3xx) && !defined(STM32L0xx) &&\
   !defined(STM32L1xx) && !defined(STM32L4xx) && !defined(STM32MP1xx)) || \
   defined(RTC_BACKUP_SUPPORT)
-#if !defined(STM32L412xx) && !defined(STM32L422xx)
+#if !defined(STM32L412xx) && !defined(STM32L422xx) && !defined(STM32L4P5xx)
 #define ENABLE_BACKUP_SUPPORT
 #endif
 #endif
