@@ -40,22 +40,22 @@ extern "C"{
  *----------------------------------------------------------------------------*/
 
 //
-#define PA15 5
-#define PB3  6
-#define PA0  7  
-#define PA1  8  
-#define PB4  9
-#define PB6  10
-#define PB7  11
-#define PB8  12
-#define PB9  13 
-#define PC13 14 //LED
-#define PB2  15 
-#define PA5  16 
-#define PA6  17 
-#define PA7  18 
-#define PB10 19 
-#define PB11 20 
+#define PA5  0  //SCK
+#define PA6  1  //CIPO
+#define PA7  2  //COPI
+#define Pb18 3  //SCL
+#define PB11 4  //SDA
+#define PA15 5  //D5
+#define PB3  6  //D6
+#define PA0  7  //TX
+#define PA1  8  //RX
+#define PB4  9  //D9
+#define PB6  10 //D10
+#define PB7  11 //D11
+#define PB8  12 //D12
+#define PB9  13 //D13
+#define PB13 14 //LED
+#define PB2  15 //D2
 
 // Analog pins
 #define PB0  A0
@@ -73,33 +73,29 @@ extern "C"{
 #define LED_GREEN               LED_BUILTIN
 
 // I2C Definitions
-#define PIN_WIRE_SDA            20
-#define PIN_WIRE_SCL            19
+#define PIN_WIRE_SDA            4
+#define PIN_WIRE_SCL            3
 
 // SPI definitions
 #define PIN_SPI_SS              5
-#define PIN_SPI_MOSI            18
-#define PIN_SPI_MISO            17
-#define PIN_SPI_SCK             16
+#define PIN_SPI_MOSI            2
+#define PIN_SPI_MISO            1
+#define PIN_SPI_SCK             0
 
 //ADC resolution is 12bits
-//#define ADC_RESOLUTION          12
+#define ADC_RESOLUTION          12
 
 //PWR resolution
 //#define PWM_RESOLUTION          8
 //#define PWM_FREQUENCY           1000
 //#define PWM_MAX_DUTY_CYCLE      255
 
-//On-board LED pin number
-#define LED_BUILTIN             14
-#define LED_GREEN               LED_BUILTIN
-
 //Timer Definitions
 #define TIMER_TONE              TIM6
 #define TIMER_SERVO             TIM7
 
 // UART Definitions
-#define SERIAL_UART_INSTANCE     2 //Connected to ST-Link
+//#define SERIAL_UART_INSTANCE     2 //Connected to ST-Link
 // Default pin used for 'Serial' instance (ex: ST-Link)
 // Mandatory for Firmata
 #define PIN_SERIAL1_RX           8
@@ -130,7 +126,7 @@ extern "C"{
 // SERIAL_PORT_HARDWARE_OPEN  Hardware serial ports which are open for use.  Their RX & TX
 //                            pins are NOT connected to anything by default.
 #define SERIAL_PORT_MONITOR   Serial
-#define SERIAL_PORT_USBVIRTUAL Serial
+//#define SERIAL_PORT_USBVIRTUAL Serial
 #define SERIAL_PORT_HARDWARE  Serial1
 #endif
 

@@ -31,5 +31,5 @@
   USB_OTG_FS_DM = PA_11,
   USB_OTG_FS_DP = PA_12,
   USB_OTG_FS_NOE = PA_13,
-  USB_OTG_FS_SOF = PA_14,
+  //USB_OTG_FS_SOF = PA_14,
 #endif

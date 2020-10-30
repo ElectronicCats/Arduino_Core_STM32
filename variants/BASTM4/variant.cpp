@@ -43,22 +43,23 @@
   to STM32 PinName (PYx)*/
   const PinName digitalPin[] = {
     //PYx, Dx
-    PA_15, //D0
-    PB_3, //D1
-    PA_0, //D2 -TX
-    PA_1, //D3 -RX
-    PB_4, //D4
-    PB_6, //D5
-    PB_7, //D6
-    PB_8, //D7
-    PB_9, //D8
-    PC_13, //D9 -LED
-    PB_2, //D10 -D2
-    PA_5, //D11 -SCK
-    PA_6, //D12 -CIPO
-    PA_7, //D13 -COPI
-    PB_10, //D14 -SCL
-    PB_11, //D15 -SDA
+    PA_5, //D0 -SCK
+    PA_6, //D1 -CIPO
+    PA_7, //D2 -COPI
+    PB_10, //D3 -SCL
+    PB_11, //D4 -SDA
+    PA_15, //D5
+    PB_3, //D6
+    PA_0, //D7 -TX
+    PA_1, //D8 -RX
+    PB_4, //D9 d9
+    PB_6, //D10 
+    PB_7, //D11 
+    PB_8, //D12 
+    PB_9, //D13 
+    PC_13, //D14 -LED
+    PB_2, //D15 -D2
+    
     //ANALOG PINS
     PB_0, //D16- A0
     PB_1, //D17- A1
@@ -68,11 +69,11 @@
   };
 
    const uint32_t analogInputPin[] = {
-    0, //A0
-    1, //A1
-    2, //A2
-    3, //A3
-    4  //A4
+    16, //A0
+    17, //A1
+    18, //A2
+    19, //A3
+    20  //A4
   };
 
 #ifdef __cplusplus
