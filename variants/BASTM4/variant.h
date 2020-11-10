@@ -43,7 +43,7 @@ extern "C"{
 #define PA5  0  //SCK
 #define PA6  1  //CIPO
 #define PA7  2  //COPI
-#define Pb18 3  //SCL
+#define PB10 3  //SCL
 #define PB11 4  //SDA
 #define PA15 5  //D5
 #define PB3  6  //D6
@@ -66,7 +66,7 @@ extern "C"{
 
 #define NUM_DIGITAL_PINS        21
 #define NUM_ANALOG_INPUTS       5
-//#define NUM_ANALOG_FIRST        0
+//#define NUM_ANALOG_FIRST        0 
 
 // On-board LED pin number
 #define LED_BUILTIN             14
@@ -97,9 +97,10 @@ extern "C"{
 // UART Definitions
 //#define SERIAL_UART_INSTANCE     2 //Connected to ST-Link
 // Default pin used for 'Serial' instance (ex: ST-Link)
+#define SERIAL_UART_INSTANCE    1
 // Mandatory for Firmata
-#define PIN_SERIAL1_RX           8
-#define PIN_SERIAL1_TX           7
+#define PIN_SERIAL_RX           8
+#define PIN_SERIAL_TX           7
 
 #ifdef __cplusplus
 } // extern "C"
