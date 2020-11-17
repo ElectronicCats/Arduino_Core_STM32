@@ -45,7 +45,7 @@ extern "C"{
 #define PA7  2  //COPI
 #define PB10 3  //SCL
 #define PB11 4  //SDA
-#define PA15 5  //D5
+#define PA15 5  //D5 CS
 #define PB3  6  //D6
 #define PA0  7  //TX
 #define PA1  8  //RX
@@ -95,7 +95,6 @@ extern "C"{
 #define TIMER_SERVO             TIM7
 
 // UART Definitions
-//#define SERIAL_UART_INSTANCE     2 //Connected to ST-Link
 // Default pin used for 'Serial' instance (ex: ST-Link)
 #define SERIAL_UART_INSTANCE    1
 // Mandatory for Firmata
