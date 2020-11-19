@@ -98,8 +98,8 @@ extern "C"{
 // Default pin used for 'Serial' instance (ex: ST-Link)
 #define SERIAL_UART_INSTANCE    1
 // Mandatory for Firmata
-#define PIN_SERIAL_RX           8
-#define PIN_SERIAL_TX           7
+#define PIN_SERIAL1_RX           8
+#define PIN_SERIAL1_TX           7
 
 #ifdef __cplusplus
 } // extern "C"
